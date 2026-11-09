@@ -15,8 +15,17 @@ warning because the installer is not code-signed; choose "More info" and then "R
 **macOS, Apple Silicon (M1 or newer)**: download `Ultra.Calendar-<version>-arm64.dmg`.
 **macOS, Intel**: download `Ultra.Calendar-<version>.dmg`.
 
-Open the DMG and drag Ultra Calendar to Applications. The app is not notarized, so on first launch
-right-click the app and choose Open, or run:
+Open the DMG and drag Ultra Calendar to Applications. The app is not notarized by Apple yet, so the first
+launch is blocked with a message that macOS cannot verify it. This is a one-time step per Mac:
+
+1. Double-click Ultra Calendar once and dismiss the dialog.
+2. Open System Settings > Privacy & Security, scroll down to the Security section, and click **Open Anyway**
+   next to Ultra Calendar. Confirm with your password or Touch ID.
+3. Launch the app again. It opens normally from now on.
+
+(On macOS 15 and later, the old right-click > Open shortcut no longer bypasses this check.)
+
+Alternative from a terminal:
 
 ```
 xattr -dr com.apple.quarantine "/Applications/Ultra Calendar.app"
